@@ -74,5 +74,5 @@ end
 # Devise for User Authentication Processes
 gem 'devise'
 
-# Bootstrap Setup
-gem 'bootstrap', '~> 5.3.0-alpha1'
+# Bootstrap setup
+gem 'bootstrap', '~> 5.2.3'
