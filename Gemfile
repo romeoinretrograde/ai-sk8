@@ -79,3 +79,6 @@ gem 'bootstrap', '~> 5.2.3'
 
 # Dotenv for security
 gem "dotenv-rails", groups: [:development, :test]
+
+# Cloudinary for Hosting images
+gem "cloudinary"
