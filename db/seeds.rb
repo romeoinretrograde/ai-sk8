@@ -3,7 +3,7 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   movies = Movie.create([{ name: "Star Wars" } { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
 # Seeds for the Sneakers (Products)
@@ -182,3 +182,167 @@ Product.create(
   price: 34.99,
   cltag: 'AI-SK8/sneaker_25.jpg'
 )
+
+# Category seeds
+color_categories = %w[silver black blue pink brown gray red orange white yellow green]
+
+style_categories = %w[futuristic retro casual sporty]
+
+material_categories = ['cotton', 'leather', 'rubber foam']
+
+
+color_categories.each do |category|
+  Category.create(
+    name: category,
+    section: "color"
+  )
+end
+
+style_categories.each do |category|
+  Category.create(
+    name: category,
+    section: "style"
+  )
+end
+
+material_categories.each do |category|
+  Category.create(
+    name: category,
+    section: "material"
+  )
+end
+
+
+# ProductCategory seeds
+
+  # Colors
+    # Silver shoes
+    ProductCategory.create(
+      product_id: 1,
+      category_id: 1
+    )
+
+    # Black shoes
+    black_shoes = [2,3,4,17,19,20,21,23]
+
+    black_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 2
+      )
+    end
+
+    # Blue shoes
+    blue_shoes = [2,9]
+
+    blue_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 3
+      )
+    end
+
+    # Pink shoes
+    pink_shoes = [5,6,8,11,13,14,16]
+
+    pink_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 4
+      )
+    end
+
+    # Brown shoes
+    brown_shoes = [4,25]
+
+    brown_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 5
+      )
+    end
+
+    # Gray shoes
+    gray_shoes = [4,18,25]
+
+    gray_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 6
+      )
+    end
+
+    # Red shoes
+    red_shoes = [6,7,12]
+
+    red_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 7
+      )
+    end
+
+    # Orange shoes
+    orange_shoes = [7,10,12,14,22]
+
+    orange_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 8
+      )
+    end
+
+    # White shoes
+    white_shoes = [10,11,18,19,23,24]
+
+    white_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 9
+      )
+    end
+
+    # Yellow shoes
+    yellow_shoes = [15,23]
+
+    yellow_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 10
+      )
+    end
+
+    # Green shoes
+    ProductCategory.create(
+      product_id: 18,
+      category_id: 11
+    )
+
+  # Materials
+
+    cotton_shoes = [2,4,6,7,8,9,12,13,14,15,16,18,19,22,23,25]
+
+    cotton_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 16
+      )
+    end
+
+    leather_shoes = [1,3,5]
+
+    leather_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 17
+      )
+    end
+
+    rubber_foam_shoes = [10,11,17,20,21,24]
+
+    rubber_foam_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 18
+      )
+    end
