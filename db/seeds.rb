@@ -346,3 +346,41 @@ end
         category_id: 18
       )
     end
+
+  # Styles
+
+    retro_shoes = [2,11]
+
+    retro_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 13
+      )
+    end
+
+    casual_shoes = [4,5,9,13,15,16,19,21,24,25]
+
+    casual_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 14
+      )
+    end
+
+    sporty_shoes = [7,8,10,12,18,20]
+
+    sporty_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 15
+      )
+    end
+
+    futuristic_shoes = [1,3,6,14,17,22,23]
+
+    futuristic_shoes.each do |id|
+      ProductCategory.create(
+        product_id: id,
+        category_id: 12
+      )
+    end
