@@ -1,12 +1,84 @@
 <h1>This is the Products#Index page</h1>
 
 <div id="filter-by">
-  <p class="filter-sort-header">
-    FILTER BY
-  </p>
-  <div class="filter-options">
-    <p class="filter-type-title">
-
-    </p>
+  <div class="filter-header">
+    <p class="filter-sort-header">FILTER BY</p>
   </div>
+
+  <div class="filter-options">
+    <div class="filter-option">
+      <p class="filter-type-title">
+        STYLE
+      </p>
+      <div class="filter-buttons">
+        <% @categories.each do |category| %>
+          <% if category.section === "style" %>
+            <div class="toggle-filter-button">
+              <%= category.name.upcase %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="filter-option">
+      <p class="filter-type-title">
+        MATERIAL
+      </p>
+      <div class="filter-buttons">
+        <% @categories.each do |category| %>
+          <% if category.section === "material" %>
+            <div class="toggle-filter-button">
+              <%= category.name.upcase %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="filter-option">
+      <p class="filter-type-title">
+        COLOR
+      </p>
+      <div class="filter-buttons">
+        <% @categories.each do |category| %>
+          <% if category.section === "color" %>
+            <div class="toggle-filter-button">
+              <%= category.name.upcase %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sort-and-show">
+  <div id="sort-by">
+    <div class="sort-header">
+      <p class="filter-sort-header">SORT BY</p>
+    </div>
+
+    <div class="sort-buttons">
+      <div class="toggle-sort-button">HIGH TO LOW</div>
+      <div class="toggle-sort-button">LOW TO HIGH</div>
+      <div class="toggle-sort-button">A-Z</div>
+    </div>
+  </div>
+
+  <div class="show-products">
+    <% @products.each do |sneaker| %>
+      <div class="product-card">
+        <div class="product-image">
+          <%= cl_image_tag(sneaker.cltag) %>
+        </div>
+        <div class="product-info">
+          <div class="sneaker-name"><%= sneaker.name.upcase %></div>
+          <div class="sneaker-style"><%= sneaker.categories.find_by_section("style").name.upcase %></div>
+          <div class="sneaker-price"><%= "€" + sneaker.price.to_s %></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
 </div>
