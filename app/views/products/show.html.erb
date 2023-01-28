@@ -1,1 +1,35 @@
 <h1>This is the Products#Show page</h1>
+
+<div class="categories-show-container">
+  <% @product.categories.each do |category| %>
+    <div class="category-show-button">
+      <%= category.name %>
+    </div>
+  <% end %>
+</div>
+
+<div class="show-product-card">
+  <div class="show-image">
+    <%= cl_image_tag(@product.cltag) %>
+  </div>
+  <div class="show-info">
+    <div class="name-style-price">
+      <p class="name-header"><%= @product.name %></p>
+      <p class="style-header"><%= @product.categories.find_by_section("style").name %></p>
+      <p class="price-header"><%= "€#{@product.price}" %></p>
+    </div>
+    <div class="description-no-upper">
+      <p class="show-description"><%= @product.description %></p>
+      <div class="no-upper">
+        <p class="show-no"><%= "Item No.: #{@product.object_id}" %></p>
+        <p class="show-upper"><%= "Upper: #{@product.categories.find_by_section("material").name}" %></p>
+      </div>
+    </div>
+  </div>
+  <div class="sizes-and-cart">
+    <%# Add cart and sizes here %>
+  </div>
+</div>
+<div class="show-reviews">
+  <%# Add reviews here %>
+</div>
